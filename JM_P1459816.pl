@@ -34,11 +34,16 @@ sub Cipher{
 		#print $file;	
 		open my $file, '>', $file ;
 		print {$file} $msg . "\n";
+		close $file;
 	} elseif ($userInput eq 'd') {
 		print "Type the file you want to decrypt: ";
+		chomp(my $file =<STDIN>);
+		open my $file, '<', $file;
+		my ($msg) = <$file>;
+		close $file;
 
 	} else {
-		print "You have key in the invalid input.";
+		print "You have key in the invalid input.\n";
 	}
 
 }
