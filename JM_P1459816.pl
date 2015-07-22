@@ -51,9 +51,15 @@ sub encrypt{
 
 		foreach $emsg_array(@emsg_array){
 			#print "$emsg_array";
-			my $chck_word_length = length($emsg_array);
+			my $chck_word_length = length($emsg_array); #This is to check the length of the message
+			#print "$chck_word_length";
+			my $letters_word_length =($emsg_array =~ tr/[A-Za-z]//); #Check for alphabet character length for shift
+			print "$letters_word_length";
 
-			my $
+			for($i=0 $i<chck_word_length;$i++){
+				my $encrypt_letter substr($emsg_array, $i, 1);
+
+			}
 		}
 
 }
