@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-use strict;
+#use strict;
 use warnings;
 use Cwd;
 
@@ -26,24 +26,34 @@ sub Cipher{
 	#print $userInput; // test user input 
 
 	if($userInput eq 'e'){
-		print "Type message you want to encrypt:";
-		chomp (my $msg = <STDIN>);
-		#print $msg;
-		print "Type output file:";
-		chomp(my $file =<STDIN>);
+		encrypt();
+		#print "Type output file:";
+		#chomp(my $file =<STDIN>);
 		#print $file;	
-		open my $file, '>', $file ;
-		print {$file} $msg . "\n";
-		close $file;
-	} elseif ($userInput eq 'd') {
+		#open my $file, '>', $file ;
+		#print {$file} $msg . "\n";
+		#close $file;
+	} elsif ($userInput eq 'd') {
 		print "Type the file you want to decrypt: ";
-		chomp(my $file =<STDIN>);
-		open my $file, '<', $file;
-		my ($msg) = <$file>;
-		close $file;
+	
 
 	} else {
 		print "You have key in the invalid input.\n";
 	}
+
+}
+
+sub encrypt{
+		print "\nType message you want to encrypt:\n";
+		chomp (my $msg = <STDIN>);
+		my @emsg_array = split / /, $msg; #split the message by spaces
+		my $emsg =''; #Encrypted message will store in here
+
+		foreach $emsg_array(@emsg_array){
+			#print "$emsg_array";
+			my $chck_word_length = length($emsg_array);
+
+			my $
+		}
 
 }
